@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MariaDB - erp_tsia@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.11">
+    <root id="1">
+      <ServerVersion>0.16.4.1</ServerVersion>
+      <DefaultCasing>exact</DefaultCasing>
+    </root>
+    <schema id="2" parent="1" name="erp_tsia">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+  </database-model>
+</dataSource>
