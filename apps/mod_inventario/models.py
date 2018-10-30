@@ -6,6 +6,9 @@ class Categoria(models.Model):
     nombre = models.CharField(max_length=20)
     descripcion = models.CharField(max_length=100)
 
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
 class Producto(models.Model):
     id_prod = models.AutoField(primary_key=True)
     id_cat = models.ForeignKey(Categoria, on_delete=models.CASCADE)

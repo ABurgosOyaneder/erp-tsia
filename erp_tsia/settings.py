@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'django_adminlte',
     'apps.mod_inventario',
     'apps.mod_adquisiciones',
+    'apps.mod_contabilidad',
+    'apps.mod_clientes',
+    'apps.mod_facturacion',
+    'apps.mod_remuneraciones',
+    'apps.mod_venta_cot',
     'apps.core',
 ]
 
