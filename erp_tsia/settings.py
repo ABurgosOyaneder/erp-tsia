@@ -89,8 +89,8 @@ DATABASES = {
         'NAME': 'erp_tsia',
         'USER': 'soporte',
         'PASSWORD': 'tsia2018',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'HOST':'',
+        'PORT':'',
         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
 
     }
