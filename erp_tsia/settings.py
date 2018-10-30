@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_adminlte',
     'apps.mod_inventario',
+    'apps.mod_adquisiciones',
     'apps.core',
 ]
 
