@@ -5,13 +5,15 @@ $(document).ready(function (){
         dataType: 'json',
         beforeSend: function(){
             swal({
-                title: "Cargando"
+                title:"Cargando",
+                showConfirmButton: false,
+                imageUrl: "static/img/ajax.gif",
+                imageHeight: 80
             });
         },
         success: function (data) {
-            alertify.success('Carga completa AJAX');
             swal.close()
-            console.log(data)
+            //console.log(data)
             labelsa = data.labels
             var ctx = document.getElementById("myChart").getContext('2d');
             $("#grafico").show();
@@ -31,6 +33,7 @@ $(document).ready(function (){
                     }
                 }
             });
+            alertify.success('Carga completa AJAX');
         },
         error: function (error_data) {
             console.log("ERROR")
