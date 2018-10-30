@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="054fbe44-f6c1-4b06-bae7-5cb0fa99a87c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/mod_remuneraciones/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mod_adquisiciones/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mod_adquisiciones/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mod_adquisiciones/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mod_adquisiciones/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mod_adquisiciones/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mod_adquisiciones/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mod_inventario/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mod_inventario/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mod_inventario/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mod_inventario/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mod_remuneraciones/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mod_remuneraciones/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erp_tsia/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/erp_tsia/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +41,7 @@
         <counts>
           <entry key="html" value="1769" />
           <entry key="js" value="693" />
+          <entry key="md" value="328" />
           <entry key="py" value="5453" />
           <entry key="txt" value="17" />
         </counts>
@@ -57,14 +50,16 @@
         <counts>
           <entry key="HTML" value="1769" />
           <entry key="JavaScript" value="693" />
+          <entry key="Markdown" value="328" />
           <entry key="PLAIN_TEXT" value="17" />
           <entry key="Python" value="5453" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="16" />
+          <entry key="html" value="21" />
           <entry key="js" value="1" />
+          <entry key="md" value="1" />
           <entry key="py" value="36" />
           <entry key="rnc" value="1" />
           <entry key="sql" value="1" />
@@ -72,8 +67,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="16" />
+          <entry key="HTML" value="21" />
           <entry key="JavaScript" value="1" />
+          <entry key="Markdown" value="1" />
           <entry key="Python" value="36" />
           <entry key="RNG Compact" value="1" />
           <entry key="Scratch" value="1" />
@@ -83,7 +79,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/erp_tsia/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -93,76 +89,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/core/js/prueba.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/templates/mod_adquisiciones/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp_tsia/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-              <folding>
-                <element signature="e#632#664#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/templates/mod_clientes/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/mod_adquisiciones/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/templates/mod_facturacion/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/mod_venta_cot/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/templates/mod_remuneraciones/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/core/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" column="41" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="41" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/templates/mod_venta_cot/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/mod_remuneraciones/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-              <folding>
-                <marker date="1540905355411" expanded="true" signature="82:87" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="305:310" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="527:532" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="751:756" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="1345:1350" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="1661:1666" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="1930:1935" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="2218:2223" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="2597:2602" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="3395:3400" ph="..." />
-                <marker date="1540905355411" expanded="true" signature="3948:3953" ph="..." />
-              </folding>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="290">
+                <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -237,6 +195,7 @@
         <option value="$PROJECT_DIR$/apps/mod_adquisiciones/models.py" />
         <option value="$PROJECT_DIR$/apps/mod_adquisiciones/urls.py" />
         <option value="$PROJECT_DIR$/erp_tsia/urls.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -278,6 +237,12 @@
             </path>
             <path>
               <item name="erp_tsia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="erp_tsia" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="mod_contabilidad" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="erp_tsia" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -301,11 +266,11 @@
       <recent name="$PROJECT_DIR$/templates/core" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/apps/mod_venta_cot" />
-      <recent name="$PROJECT_DIR$/apps/mod_remuneraciones" />
-      <recent name="$PROJECT_DIR$/apps/mod_facturacion" />
-      <recent name="$PROJECT_DIR$/apps/mod_clientes" />
-      <recent name="$PROJECT_DIR$/templates/mod_contabilidad" />
+      <recent name="$PROJECT_DIR$/templates/mod_venta_cot" />
+      <recent name="$PROJECT_DIR$/templates/mod_remuneraciones" />
+      <recent name="$PROJECT_DIR$/templates/mod_facturacion" />
+      <recent name="$PROJECT_DIR$/templates/mod_clientes" />
+      <recent name="$PROJECT_DIR$/templates/mod_adquisiciones" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -360,6 +325,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24860558" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -603,6 +569,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="91" column="24" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mod_adquisiciones/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mod_clientes/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mod_facturacion/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mod_remuneraciones/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mod_venta_cot/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="290">
+            <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
