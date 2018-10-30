@@ -1,0 +1,61 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+
+{% block nav_heading %}MENU PRINCIPAL{% endblock %}
+
+{% block nav_links %}
+    <li>
+        <a href="{% url 'index' %}">
+            <i class="fa fa-dashboard"></i> <span>Home</span>
+        </a>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-barcode"></i> <span>Inventario</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li>
+                <a href="{% url 'index_inventario' %}">
+                    <i class="fa fa-dashboard"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-barcode"></i> Test 2
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="{% url 'index_contabilidad' %}">
+            <i class="fa fa-money"></i> Contabilidad
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="fa fa-paperclip"></i> <span> Cotizaciones </span>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <i class="fa fa-users"></i><span> Remuneraciones </span>
+        </a>
+    </li>
+    <li>
+        <a>
+            <i class="glyphicon glyphicon-inbox"></i><span> Adquisiciones </span>
+        </a>
+    </li>
+    <li>
+        <a>
+            <i class="fa fa-usd"></i><span> Facturacion</span>
+        </a>
+    </li>
+    <li>
+        <a>
+            <i class="fa fa-file"></i><span> Clientes y Cobranza</span>
+        </a>
+    </li>
+{% endblock nav_links %}
