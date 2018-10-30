@@ -12,10 +12,10 @@ pip install django django-adminlte2 mysqlclient
 ##Instalacion mariaDB
 
 Linux
-    > sudo apt-get install mariadb-server libmysqlclient-dev
-    > sudo mysql_secure_installation
-    > sudo su
-    > mysql
+    > **sudo apt-get install mariadb-server libmysqlclient-dev**
+    > **sudo mysql_secure_installation**
+    > **sudo su**
+    > **mysql**
     
     > CREATE DATABASE erp_tsia;
     > CREATE USER ‘soporte’@’localhost’ IDENTIFIED BY ‘tsia2018'; 
