@@ -43,10 +43,25 @@
             <i class="fa fa-users"></i><span> Remuneraciones </span>
         </a>
     </li>
-    <li>
-        <a>
-            <i class="glyphicon glyphicon-inbox"></i><span> Adquisiciones </span>
+    <li class="treeview">
+        <a href="#">
+            <i class="glyphicon glyphicon-inbox"></i> <span>Adquisiciones</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
         </a>
+        <ul class="treeview-menu">
+            <li>
+                <a href="{% url 'index_adquisiciones' %}">
+                    <i class="fa fa-dashboard"></i> Listar Adquisiciones
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-barcode"></i> Orden de compra
+                </a>
+            </li>
+        </ul>
     </li>
     <li>
         <a>
