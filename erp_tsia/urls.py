@@ -18,12 +18,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('apps.core.urls')),
-    path('', include('apps.mod_inventario.urls')),
-    path('', include('apps.mod_contabilidad.urls')),
-    #path('', include('apps.mod_venta_cot.urls')),
-    #path('', include('apps.mod_remuneraciones.urls')),
-    #path('', include('apps.mod_facturacion.urls')),
-    #path('', include('apps.mod_clientes.urls')),
-    #path('', include('apps.mod_adquisiciones.urls')),
+    path('inventario/', include('apps.mod_inventario.urls')),
+    path('contabilidad/', include('apps.mod_contabilidad.urls')),
+    #path('ventas/', include('apps.mod_venta_cot.urls')),
+    #path('remuneraciones/', include('apps.mod_remuneraciones.urls')),
+    #path('facturacion/', include('apps.mod_facturacion.urls')),
+    #path('clientes/', include('apps.mod_clientes.urls')),
+    #path('adquisiciones/', include('apps.mod_adquisiciones.urls')),
     path('admin/', admin.site.urls),
 ]
