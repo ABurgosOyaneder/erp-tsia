@@ -9,4 +9,27 @@
     <div class="alert alert-warning">
         Bienvenido al modulo de adquisiciones
     </div>
+
+    <table class="table table-hover table-striped table-responsive">
+    	<tbody>
+    		<tr>
+    			<th>#</th>
+    			<th>Categorias</th>
+    			<th>Cantidad</th>
+    			<th>Precio Compra</th>
+    		</tr>
+    		{% if object_list %}
+	    		{% for adquisicion in object_list %}
+					<tr>
+						<th>{{adquisicion.id}}</th>
+		    			<th>{{adquisicion.id_cat}}</th>
+		    			<th>{{adquisicion.cantidad}}</th>
+		    			<th>{{adquisicion.precio_compra}}</th>
+		    		</tr>
+	    		{% endfor %}
+    		{% else %}
+				<h1>No hay registros de adquisiciones</h1>
+    		{% endif %}
+    	</tbody>
+    </table>
 {% endblock %}
