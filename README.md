@@ -21,6 +21,6 @@ $ mysql
 ```
     
     > CREATE DATABASE erp_tsia;
-    > CREATE USER ‘soporte’@’localhost’ IDENTIFIED BY ‘tsia2018'; 
-    > GRANT ALL PRIVILEGES ON erp_tsia.* TO ‘soporte’@’localhost';
+    > CREATE USER 'soporte'@'localhost' IDENTIFIED BY 'tsia2018'; 
+    > GRANT ALL PRIVILEGES ON erp_tsia.* TO 'soporte'@'localhost';
     > FLUSH PRIVILEGES;
