@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView , DeleteView
 from django.urls import reverse_lazy
 
 from apps.mod_adquisiciones.models import Adquisicion , Ingreso , Proveedor , Orden_adq
@@ -19,7 +19,21 @@ class AdquisicionesCreate(CreateView):
 	model = Adquisicion
 	form_class = AdquisicionForm
 	template_name = 'mod_adquisiciones/adquisiciones_form.html'
-	success_url = reverse_lazy('mod_adquiiciones:adquisiciones_list.html')
+	success_url = reverse_lazy('adquisiciones_adquisiciones')
+
+class AdquisicionesUpdate(UpdateView):
+	model = Adquisicion
+	form_class = AdquisicionForm
+	template_name = 'mod_adquisiciones/adquisiciones_form.html'
+	success_url = reverse_lazy('adquisiciones_adquisiciones')
+
+class AdquisicionesDelete(DeleteView):
+	model = Adquisicion
+	form_class = AdquisicionForm
+	template_name = 'mod_adquisiciones/adquisiciones_delete.html'
+	success_url = reverse_lazy('adquisiciones_adquisiciones')
+
+
 
 
 class IngresoList(ListView):
