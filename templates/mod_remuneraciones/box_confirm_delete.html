@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+
+{% block page_name%} Remuneraciones {% endblock %}
+{% block page_description %}Bienvenido al modulo de remuneraciones {% endblock %}
+
+
+{% block content %}
+    <h1>Borrar Mutual</h1>
+    <form method="post">{% csrf_token %}
+        Are you sure you want to delete "{{ object }}" ?
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

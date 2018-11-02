@@ -9,6 +9,12 @@ class Box(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('box_edit', kwargs={'pk': self.pk})
+
 class Mutual(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=30)

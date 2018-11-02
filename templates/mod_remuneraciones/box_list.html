@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+
+{% block page_name%} Remuneraciones {% endblock %}
+{% block page_description %}Bienvenido al modulo de remuneraciones {% endblock %}
+
+
+{% block content %}
+    <div class="">
+        <h1>Cajas</h1>
+
+    <table border="1">
+    <thead>
+        <tr>
+        <th>Nombre</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for box in object_list %}
+        <tr>
+        <td>{{ box.nombre }}</td>
+        <td><a href="{% url "box_view" box.id %}">view</a></td>
+        <td><a href="{% url "box_edit" box.id %}">edit</a></td>
+        <td><a href="{% url "box_delete" box.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+    <a href="{% url "box_new" %}">New</a>
+    </div>
+{% endblock %}
