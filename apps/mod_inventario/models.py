@@ -9,6 +9,9 @@ class Categoria(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return '{}'.format(self.nombre)
+
 class Producto(models.Model):
     id_prod = models.AutoField(primary_key=True)
     id_cat = models.ForeignKey(Categoria, on_delete=models.CASCADE)
