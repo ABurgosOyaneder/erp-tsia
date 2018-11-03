@@ -44,19 +44,19 @@ class IngresoCreate(CreateView):
 	model = Ingreso
 	form_class = IngresoForm
 	template_name = 'mod_adquisiciones/ingreso_form.html'
-	success_url = reverse_lazy('adquisiciones_adquisiciones')
+	success_url = reverse_lazy('adquisiciones_ingresos')
 
 class IngresoUpdate(UpdateView):
 	model = Ingreso
 	form_class = IngresoForm
 	template_name = 'mod_adquisiciones/ingreso_form.html'
-	success_url = reverse_lazy('adquisiciones_adquisiciones')
+	success_url = reverse_lazy('adquisiciones_ingresos')
 
 class IngresoDelete(DeleteView):
 	model = Ingreso
 	form_class = IngresoForm
 	template_name = 'mod_adquisiciones/ingreso_delete.html'
-	success_url = reverse_lazy('adquisiciones_adquisiciones')
+	success_url = reverse_lazy('adquisiciones_ingresos')
 
 
 
@@ -68,19 +68,19 @@ class ProveedorCreate(CreateView):
 	model = Proveedor
 	form_class = ProveedorForm
 	template_name = 'mod_adquisiciones/proveedor_form.html'
-	success_url = reverse_lazy('adquisiciones_adquisiciones')
+	success_url = reverse_lazy('adquisiciones_proveedores')
 
 class ProveedorUpdate(UpdateView):
 	model = Proveedor
 	form_class = ProveedorForm
 	template_name = 'mod_adquisiciones/proveedor_form.html'
-	success_url = reverse_lazy('adquisiciones_adquisiciones')
+	success_url = reverse_lazy('adquisiciones_proveedores')
 
 class ProveedorDelete(DeleteView):
 	model = Proveedor
 	form_class = ProveedorForm
 	template_name = 'mod_adquisiciones/proveedor_delete.html'
-	success_url = reverse_lazy('adquisiciones_adquisiciones')
+	success_url = reverse_lazy('adquisiciones_proveedores')
 
 
 
@@ -92,17 +92,17 @@ class OrdenAdqCreate(CreateView):
 	model = Orden_adq
 	form_class = OrdenAdqForm
 	template_name = 'mod_adquisiciones/ord_adq_form.html'
-	success_url = reverse_lazy('adquisiciones_adquisiciones')
+	success_url = reverse_lazy('adquisiciones_ordenes_adquisiciones')
 
 class OrdenAdqUpdate(UpdateView):
 	model = Orden_adq
 	form_class = OrdenAdqForm
 	template_name = 'mod_adquisiciones/ord_adq_form.html'
-	success_url = reverse_lazy('adquisiciones_adquisiciones')
+	success_url = reverse_lazy('adquisiciones_ordenes_adquisiciones')
 
 class OrdenAdqDelete(DeleteView):
 	model = Orden_adq
 	form_class = OrdenAdqForm
 	template_name = 'mod_adquisiciones/ord_adq_delete.html'
-	success_url = reverse_lazy('adquisiciones_adquisiciones')
+	success_url = reverse_lazy('adquisiciones_ordenes_adquisiciones')
 
