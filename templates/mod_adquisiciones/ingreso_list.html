@@ -14,15 +14,20 @@
     			<th>Producto</th>
     			<th>Cantidad</th>
     			<th>Precio Compra</th>
+                <th>Opciones</th>
     		</tr>
     		{% if object_list %}
 	    		{% for ingreso in object_list %}
 					<tr>
 						<th>{{ingreso.id}}</th>
-                        <th>{{ingreso.id_adq.id}}</th>
-		    			<th>{{ingreso.id_prod.nombre}}</th>
+                        <th>{{ingreso.id_adq_id.id}}</th>
+		    			<th>{{ingreso.id_prod_id.nombre}}</th>
 		    			<th>{{ingreso.cantidad}}</th>
 		    			<th>{{ingreso.precio_compra}}</th>
+                        <th>
+                            <a class="btn btn-primary" href="{% url 'adquisiciones_ingresos_update' ingreso.id %}">Actualizar</a>
+                            <a class="btn btn-danger" href="{% url 'adquisiciones_ingresos_delete' ingreso.id %}">Borrar</a>
+                        </th>
 		    		</tr>
 	    		{% endfor %}
     		{% else %}
@@ -30,4 +35,8 @@
     		{% endif %}
     	</tbody>
     </table>
+
+    <a href="{% url 'adquisiciones_ingresos_create' %}">
+        <button class="btn btn-success">Crear</button>
+    </a>
 {% endblock %}

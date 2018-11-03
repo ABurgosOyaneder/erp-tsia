@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+
+
+{% block page_name%} Proveedor {% endblock %}
+{% block page_description %}Bienvenido al modulo de adquisiciones {% endblock %}
+
+
+{% block content %}
+    <table class="table table-hover table-striped table-responsive">
+    	<tbody>
+    		<tr>
+    			<th>#</th>
+                <th>Rut</th>
+    			<th>Nombre</th>
+    			<th>Direccion</th>
+                <th>Telefono</th>
+                <th>Nombre Contasd</th>
+    			<th>Giro</th>
+                <th>Opciones</th>
+    		</tr>
+    		{% if object_list %}
+	    		{% for proveedor in object_list %}
+					<tr>
+						<th>{{proveedor.rut}}</th>
+                        <th>{{proveedor.nombre}}</th>
+		    			<th>{{proveedor.direccion}}</th>
+		    			<th>{{proveedor.telefono}}</th>
+                        <th>{{proveedor.nom_cont}}</th>
+		    			<th>{{proveedor.giro}}</th>
+                        <th>
+                            <a class="btn btn-primary" href="{% url 'adquisiciones_proveedor_update' proveedor.id %}">Actualizar</a>
+                            <a class="btn btn-danger" href="{% url 'adquisiciones_proveedor_delete' proveedor.id %}">Borrar</a>
+                        </th>
+		    		</tr>
+	    		{% endfor %}
+    		{% else %}
+				<h1>No hay registros de ingresos</h1>
+    		{% endif %}
+    	</tbody>
+    </table>
+
+    <a href="{% url 'adquisiciones_proveedor_create' %}">
+        <button class="btn btn-success">Crear</button>
+    </a>
+{% endblock %}

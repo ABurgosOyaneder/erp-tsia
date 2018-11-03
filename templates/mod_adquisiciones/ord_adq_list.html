@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+
+
+{% block page_name%} Ordenes de adquisicion {% endblock %}
+{% block page_description %}Bienvenido al modulo de adquisiciones {% endblock %}
+
+
+{% block content %}
+    <table class="table table-hover table-striped table-responsive">
+    	<tbody>
+    		<tr>
+    			<th>#</th>
+                <th>Adquisicion</th>
+    			<th>Producto</th>
+    			<th>Precio Compra</th>
+                <th>Opciones</th>
+    		</tr>
+    		{% if object_list %}
+	    		{% for ord_adq in object_list %}
+					<tr>
+						<th>{{ord_adq.id}}</th>
+                        <th>{{ord_adq.id_adq_id.id}}</th>
+		    			<th>{{ord_adq.id_prov_id.nombre}}</th>
+		    			<th>{{ord_adq.precio_compra}}</th>
+                        <th>
+                            <a class="btn btn-primary" href="{% url 'adquisiciones_ordenes_update' ord_adq.id %}">Actualizar</a>
+                            <a class="btn btn-danger" href="{% url 'adquisiciones_ordenes_delete' ord_adq.id %}">Borrar</aord_adq                        </th>
+		    		</tr>
+	    		{% endfor %}
+    		{% else %}
+				<h1>No hay registros de ingresos</h1>
+    		{% endif %}
+    	</tbody>
+    </table>
+
+    <a href="{% url 'adquisiciones_ordenes_create' %}">
+        <button class="btn btn-success">Crear</button>
+    </a>
+{% endblock %}
