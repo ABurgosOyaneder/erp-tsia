@@ -1,12 +1,16 @@
 {% extends 'core/base.html' %}
 
 
-{% block page_name%} Contabilidad {% endblock %}
-{% block page_description %}Bienvenido al modulo de contabilidad {% endblock %}
+{% block page_name%} Ventas y Cotizaciones {% endblock %}
+{% block page_description %}Bienvenido al modulo de ventas y cotizaciones {% endblock %}
 
 
 {% block content %}
     <div class="alert alert-warning">
-        Bienvenido al modulo de contabilidad
+        Bienvenido al modulo de ventas y cotizaciones
+    </div>
+    <div class="list-group">
+    	<a href="{% url 'cotizacion_venta_cot' %}" class="list-group-item list-group-item-success"> Realizar Cotización</a>
+    	<a href="{% url 'venta_venta_cot' %}"class="list-group-item list-group-item-info"> Realizar venta</a>
     </div>
 {% endblock %}
