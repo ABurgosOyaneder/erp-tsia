@@ -20,7 +20,7 @@ urlpatterns = [
     path('', include('apps.core.urls')),
     path('inventario/', include('apps.mod_inventario.urls')),
     path('contabilidad/', include('apps.mod_contabilidad.urls')),
-    #path('ventas/', include('apps.mod_venta_cot.urls')),
+    #path('ventas/', include('apps.mod_cotizacionescotizaciones.urls')),
     #path('remuneraciones/', include('apps.mod_remuneraciones.urls')),
     #path('facturacion/', include('apps.mod_facturacion.urls')),
     #path('clientes/', include('apps.mod_clientes.urls')),

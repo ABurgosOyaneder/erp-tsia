@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'apps.mod_clientes',
     'apps.mod_facturacion',
     'apps.mod_remuneraciones',
-    'apps.mod_venta_cot',
+    'apps.mod_cotizaciones',
     'apps.core',
 ]
 
