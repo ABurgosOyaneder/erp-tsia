@@ -1,6 +1,6 @@
 from django import forms
 
-from apps.mod_adquisiciones.models import Adquisicion, Ingreso , Proveedor , Orden_adq
+from .models import Adquisicion, Ingreso , Proveedor , Orden_adq
 
 class AdquisicionForm(forms.ModelForm):
 	class Meta:

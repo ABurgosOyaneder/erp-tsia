@@ -1,22 +1,25 @@
 from django.db import models
 from apps.mod_inventario.models import Producto,Categoria
 
+from .validators import ValidateMayorCero
+
+
 # Create your models here.
 
 class Adquisicion(models.Model):
     id = models.AutoField(primary_key=True)
     id_cat = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     id_prod = models.ManyToManyField(Producto, through='Ingreso')
-    cantidad = models.IntegerField()
-    precio_compra = models.IntegerField()
+    cantidad = models.PositiveIntegerField(validators=[ValidateMayorCero])
+    precio_compra = models.PositiveIntegerField(validators=[ValidateMayorCero])
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
 class Ingreso(models.Model):
     id_adq = models.ForeignKey(Adquisicion, on_delete=models.CASCADE)
     id_prod = models.ForeignKey(Producto, on_delete=models.CASCADE)
-    cantidad = models.IntegerField()
-    precio_compra = models.IntegerField()
+    cantidad = models.PositiveIntegerField(validators=[ValidateMayorCero])
+    precio_compra = models.PositiveIntegerField(validators=[ValidateMayorCero])
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -35,6 +38,6 @@ class Orden_adq(models.Model):
     id = models.AutoField(primary_key=True)
     id_adq = models.ForeignKey(Adquisicion, on_delete=models.CASCADE)
     id_prov = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
-    precio_compra = models.IntegerField()
+    precio_compra = models.PositiveIntegerField(validators=[ValidateMayorCero])
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
