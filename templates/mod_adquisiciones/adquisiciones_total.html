@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+
+{% block page_name%} Adquisiciones {% endblock %}
+{% block page_description %}Grafico de total de Adquisiciones en el ultimo mes {% endblock %}
+
+
+{% block content %}
+
+    		{% if object_list %}
+	    		{% for adquisicion in object_list %}
+
+	    		{% endfor %}
+    		{% else %}
+				<h1>No hay registros de adquisiciones</h1>
+    		{% endif %}
+    	</tbody>
+
+
+
+{% endblock %}
