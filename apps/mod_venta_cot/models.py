@@ -11,19 +11,11 @@ class Medio_pago(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-class Producto_cotizacion(models.Model):
-    id = models.AutoField(primary_key=True)
-    id_prod = models.ForeignKey(Producto, on_delete=models.CASCADE)
-    cantidad = models.IntegerField()
-    precio_unitario = models.IntegerField()
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
 class Cotizacion(models.Model):
     id = models.AutoField(primary_key=True)
     id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    id_prod_cot = models.ForeignKey(Producto_cotizacion, on_delete=models.CASCADE)
     id_medio = models.ForeignKey(Medio_pago, on_delete=models.CASCADE)
+    productos = models.ManyToManyField(Producto, through="Producto_cotizacion")
     fecha_vencimiento = models.DateField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -32,16 +24,18 @@ class Cotizacion(models.Model):
     descuento = models.FloatField()
     estado = models.BooleanField()
 
+class Producto_cotizacion(models.Model):
+    id_prod = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    id_cot = models.ForeignKey(Cotizacion, on_delete=models.CASCADE, default=1)
+    cantidad = models.IntegerField()
+    precio_unitario = models.IntegerField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
 class Cargo(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=20)
     valor = models.IntegerField()
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-class Cargo_venta(models.Model):
-    id = models.AutoField(primary_key=True)
-    id_cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -52,4 +46,10 @@ class Venta(models.Model):
     updated = models.DateTimeField(auto_now=True)
     total = models.IntegerField()
     estado = models.CharField(max_length=20)
-    id_cargos = models.ForeignKey(Cargo_venta, on_delete=models.CASCADE)
+    cargos = models.ManyToManyField(Cargo, through="Cargo_venta")
+
+class Cargo_venta(models.Model):
+    id_venta = models.ForeignKey(Venta, on_delete=models.CASCADE, default=1)
+    id_cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
