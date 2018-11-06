@@ -6,10 +6,6 @@ class Giro(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=20)
 
-class Giro_cliente(models.Model):
-    id = models.AutoField(primary_key=True)
-    id_giro = models.ForeignKey(Giro, on_delete=models.CASCADE)
-
 class Cliente(models.Model):
     id = models.AutoField(primary_key=True)
     rut = models.CharField(max_length=15)
@@ -18,4 +14,14 @@ class Cliente(models.Model):
     correo = models.CharField(max_length=50)
     cred_disponible = models.IntegerField()
     habilitado = models.BooleanField()
-    id_giro = models.ForeignKey(Giro_cliente, on_delete=models.CASCADE)
+    giros = models.ManyToManyField(Giro, through="Giro_cliente" )
+
+class Giro_cliente(models.Model):
+    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, default=1)
+    id_giro = models.ForeignKey(Giro, on_delete=models.CASCADE)
+
+
+
+
+
+
