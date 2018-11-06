@@ -2,12 +2,19 @@ from django import forms
 
 from .models import Adquisicion, AdquisicionesProductos , Proveedor , Orden_adq
 
+ESTADOS= (
+		('R','ASD'),
+		('R','ASD'),
+	)
+
 class AdquisicionForm(forms.ModelForm):
+
 	class Meta:
 		model = Adquisicion
 
 		fields = {
 			'id_cat',
+			'estado',
 			#'id_prod',
 			#'cantidad',
 			'precio_compra',
@@ -16,6 +23,7 @@ class AdquisicionForm(forms.ModelForm):
 
 		labels = {
 			'id_cat' : 'Categoria',
+			'estado' : 'Estado',
 			#'id_prod' : 'Productos',
 			#'cantidad' : 'Cantidad',
 			'precio_compra' : 'Precio de Compra',
@@ -24,6 +32,7 @@ class AdquisicionForm(forms.ModelForm):
 
 		widgets = {
 			'id_cat' : forms.Select(attrs={'class':'form-control'}),
+			'estado' : forms.MultipleChoiceField(choices=ESTADOS),
 			#'id_prod' : forms.CheckboxSelectMultiple(attrs={'class':'form-control'}),
 			#'cantidad' : forms.NumberInput(attrs={'class':'form-control'}),
 			'precio_compra' : forms.NumberInput(attrs={'class':'form-control'}),

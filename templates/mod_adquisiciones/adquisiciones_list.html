@@ -17,8 +17,8 @@
             <tr>
                 <th>#</th>
                 <th>Categorias</th>
-                <th>Cantidad</th>
                 <th>Precio Compra</th>
+                <th>Estado</th>
                 <th>Opciones</th>
             </tr>
         </thead>
@@ -28,8 +28,8 @@
 					<tr>
 						<th>{{adquisicion.id}}</th>
 		    			<th>{{adquisicion.id_cat.nombre}}</th>
-		    			<th>{{adquisicion.cantidad}}</th>
-		    			<th>{{adquisicion.precio_compra}}</th>
+                        <th>{{adquisicion.precio_compra}}</th>
+		    			<th>{{adquisicion.estado}}</th>
                         <th>
                             <a class="btn btn-primary" href="{% url 'adquisiciones_adquisiciones_update' adquisicion.id %}">Actualizar</a>
                             <a class="btn btn-danger" href="{% url 'adquisiciones_adquisiciones_delete' adquisicion.id %}">Borrar</a>
