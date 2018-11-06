@@ -9,17 +9,16 @@ from .validators import ValidateMayorCero
 class Adquisicion(models.Model):
     id = models.AutoField(primary_key=True)
     id_cat = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    id_prod = models.ManyToManyField(Producto, through='Ingreso')
-    cantidad = models.PositiveIntegerField(validators=[ValidateMayorCero])
+    id_prod = models.ManyToManyField(Producto, through='AdquisicionesProductos')
     precio_compra = models.PositiveIntegerField(validators=[ValidateMayorCero])
+    estado = models.CharField(max_length=20, default='pendiente')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-class Ingreso(models.Model):
+class AdquisicionesProductos(models.Model):
     id_adq = models.ForeignKey(Adquisicion, on_delete=models.CASCADE)
     id_prod = models.ForeignKey(Producto, on_delete=models.CASCADE)
     cantidad = models.PositiveIntegerField(validators=[ValidateMayorCero])
-    precio_compra = models.PositiveIntegerField(validators=[ValidateMayorCero])
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -29,6 +28,8 @@ class Proveedor(models.Model):
     nombre = models.CharField(max_length=20)
     direccion = models.CharField(max_length=30)
     telefono = models.CharField(max_length=10)
+    email = models.CharField(max_length=30, default='N/A')
+    estado = models.BooleanField(default=True)
     nom_cont = models.CharField(max_length=20)
     giro = models.CharField(max_length=20)
     created = models.DateTimeField(auto_now_add=True)
@@ -38,6 +39,5 @@ class Orden_adq(models.Model):
     id = models.AutoField(primary_key=True)
     id_adq = models.ForeignKey(Adquisicion, on_delete=models.CASCADE)
     id_prov = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
-    precio_compra = models.PositiveIntegerField(validators=[ValidateMayorCero])
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

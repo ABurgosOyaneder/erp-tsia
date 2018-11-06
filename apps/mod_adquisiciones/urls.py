@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-from apps.mod_adquisiciones.views import AdquisicionesList, AdquisicionesCreate, AdquisicionesUpdate, AdquisicionesDelete
+from apps.mod_adquisiciones.views import AdquisicionesList, AdquisicionesCreate, AdquisicionesUpdate, AdquisicionesDelete#, AdquisicionesTotal
 from apps.mod_adquisiciones.views import IngresoList, IngresoCreate, IngresoUpdate, IngresoDelete
 from apps.mod_adquisiciones.views import ProveedorList, ProveedorCreate, ProveedorUpdate, ProveedorDelete
 from apps.mod_adquisiciones.views import OrdenAdqList, OrdenAdqCreate, OrdenAdqUpdate, OrdenAdqDelete
@@ -13,6 +13,7 @@ urlpatterns = [
     path('adquisiciones/create', AdquisicionesCreate.as_view(), name="adquisiciones_adquisiciones_create"),
     path('adquisiciones/update/<int:pk>/', AdquisicionesUpdate.as_view(), name="adquisiciones_adquisiciones_update"),
     path('adquisiciones/delete/<int:pk>/', AdquisicionesDelete.as_view(), name="adquisiciones_adquisiciones_delete"),
+    #path('adquisiciones/total/<int:pk>/', AdquisicionesTotal.as_view(), name="adquisiciones_adquisiciones_total"),
 
     path('ingreso/', IngresoList.as_view(), name="adquisiciones_ingresos"),
     path('ingreso/create', IngresoCreate.as_view(), name="adquisiciones_ingresos_create"),

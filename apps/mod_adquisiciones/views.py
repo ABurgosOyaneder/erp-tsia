@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, UpdateView , DeleteView
+from django.views.generic import ListView, CreateView, UpdateView , DeleteView, TemplateView
 from django.urls import reverse_lazy
 
-from apps.mod_adquisiciones.models import Adquisicion , Ingreso , Proveedor , Orden_adq
+from apps.mod_adquisiciones.models import Adquisicion , AdquisicionesProductos , Proveedor , Orden_adq
 from apps.mod_adquisiciones.form import AdquisicionForm, IngresoForm, ProveedorForm, OrdenAdqForm
 
 def index(request):
@@ -34,26 +34,34 @@ class AdquisicionesDelete(DeleteView):
 	success_url = reverse_lazy('adquisiciones_adquisiciones')
 
 
+#class AdquisicionesTotal(TemplateView):
+
+	#model = Adquisicion
+	#template_name = 'mod_adquisiciones/adquisiciones_total.html'
+	#success_url = reverse_lazy('adquisiciones_adquisiciones')
+
+
+
 
 
 class IngresoList(ListView):
-	model = Ingreso
+	model = AdquisicionesProductos
 	template_name = 'mod_adquisiciones/ingreso_list.html'
 
 class IngresoCreate(CreateView):
-	model = Ingreso
+	model = AdquisicionesProductos
 	form_class = IngresoForm
 	template_name = 'mod_adquisiciones/ingreso_form.html'
 	success_url = reverse_lazy('adquisiciones_ingresos')
 
 class IngresoUpdate(UpdateView):
-	model = Ingreso
+	model = AdquisicionesProductos
 	form_class = IngresoForm
 	template_name = 'mod_adquisiciones/ingreso_form.html'
 	success_url = reverse_lazy('adquisiciones_ingresos')
 
 class IngresoDelete(DeleteView):
-	model = Ingreso
+	model = AdquisicionesProductos
 	form_class = IngresoForm
 	template_name = 'mod_adquisiciones/ingreso_delete.html'
 	success_url = reverse_lazy('adquisiciones_ingresos')
