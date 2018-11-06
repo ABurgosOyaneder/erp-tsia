@@ -2,11 +2,6 @@ from django import forms
 
 from .models import Adquisicion, AdquisicionesProductos , Proveedor , Orden_adq
 
-ESTADOS= (
-		('R','ASD'),
-		('R','ASD'),
-	)
-
 class AdquisicionForm(forms.ModelForm):
 
 	class Meta:
@@ -32,7 +27,7 @@ class AdquisicionForm(forms.ModelForm):
 
 		widgets = {
 			'id_cat' : forms.Select(attrs={'class':'form-control'}),
-			'estado' : forms.MultipleChoiceField(choices=ESTADOS),
+			'estado' : forms.Select(attrs={'class':'form-control'}),
 			#'id_prod' : forms.CheckboxSelectMultiple(attrs={'class':'form-control'}),
 			#'cantidad' : forms.NumberInput(attrs={'class':'form-control'}),
 			'precio_compra' : forms.NumberInput(attrs={'class':'form-control'}),

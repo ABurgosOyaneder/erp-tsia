@@ -7,11 +7,18 @@ from .validators import ValidateMayorCero
 # Create your models here.
 
 class Adquisicion(models.Model):
+    ESTADOS= (
+        ('pendiente','Pendiente'),
+        ('entregada','Entregada'),
+        ('pagado','Pagado'),
+    )
+
+
     id = models.AutoField(primary_key=True)
     id_cat = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     id_prod = models.ManyToManyField(Producto, through='AdquisicionesProductos')
     precio_compra = models.PositiveIntegerField(validators=[ValidateMayorCero])
-    estado = models.CharField(max_length=20, default='pendiente')
+    estado = models.CharField(max_length=20, default='pendiente', choices=ESTADOS)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
