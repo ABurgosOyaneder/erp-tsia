@@ -5,7 +5,6 @@ from apps.mod_inventario.models import Producto,Categoria
 
 class Adquisicion(models.Model):
     id = models.AutoField(primary_key=True)
-    id_cat = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     id_prod = models.ManyToManyField(Producto, through='Ingreso')
     cantidad = models.IntegerField()
     precio_compra = models.IntegerField()
