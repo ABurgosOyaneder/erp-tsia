@@ -32,12 +32,19 @@ class Cotizacion(models.Model):
     descuento = models.FloatField()
     estado = models.BooleanField()
 
+    def __str__(self):
+        return self.id
+
 class Cargo(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=20)
     valor = models.IntegerField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+
+    def __str__(self):
+        return self.nombre
 
 class Cargo_venta(models.Model):
     id = models.AutoField(primary_key=True)
