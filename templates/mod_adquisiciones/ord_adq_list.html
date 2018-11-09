@@ -1,13 +1,21 @@
 {% extends 'core/base.html' %}
+{% load staticfiles %}
 
 
 {% block page_name%} Ordenes de adquisicion {% endblock %}
 {% block page_description %}Bienvenido al modulo de adquisiciones {% endblock %}
 
+{% block custom_css %}
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+{% endblock %}
+
+
 
 {% block content %}
-    <table class="table table-hover table-striped table-responsive">
-    	<tbody>
+    <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+    	<thead>
     		<tr>
     			<th>#</th>
                 <th>Adquisicion</th>
@@ -15,20 +23,22 @@
     			<th>Precio Compra</th>
                 <th>Opciones</th>
     		</tr>
+        </thead>
+        <tbody>
     		{% if object_list %}
 	    		{% for ord_adq in object_list %}
 					<tr>
 						<th>{{ord_adq.id}}</th>
-                        <th>{{ord_adq.id_adq_id.id}}</th>
-		    			<th>{{ord_adq.id_prov_id.nombre}}</th>
-		    			<th>{{ord_adq.precio_compra}}</th>
+                        <th>{{ord_adq.id_adq}}</th>
+		    			<th>{{ord_adq.id_prov.nombre}}</th>
+		    			<th>{{ord_adq.id_adq.precio_compra}}</th>
                         <th>
                             <a class="btn btn-primary" href="{% url 'adquisiciones_ordenes_update' ord_adq.id %}">Actualizar</a>
                             <a class="btn btn-danger" href="{% url 'adquisiciones_ordenes_delete' ord_adq.id %}">Borrar</aord_adq                        </th>
 		    		</tr>
 	    		{% endfor %}
     		{% else %}
-				<h1>No hay registros de ingresos</h1>
+				<h1>No hay registros de ordenes de adquisicion</h1>
     		{% endif %}
     	</tbody>
     </table>
@@ -36,4 +46,10 @@
     <a href="{% url 'adquisiciones_ordenes_create' %}">
         <button class="btn btn-success">Crear</button>
     </a>
+{% endblock %}
+
+{% block custom_js %}
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="{% static 'mod_adquisiciones/js/DataTable.js' %}"></script>
+
 {% endblock %}
