@@ -20,6 +20,14 @@ class Giro_cliente(models.Model):
     id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, default=1)
     id_giro = models.ForeignKey(Giro, on_delete=models.CASCADE)
 
+class Pago(models.Model):
+    id = models.AutoField(primary_key=True)
+    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    monto_cancelado = models.IntegerField()
+    nombre = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    estado = models.BooleanField()
+
 
 
 

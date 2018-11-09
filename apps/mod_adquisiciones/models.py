@@ -1,24 +1,7 @@
 from django.db import models
-from apps.mod_inventario.models import Producto,Categoria
+from apps.mod_inventario.models import Producto
 
 # Create your models here.
-
-class Adquisicion(models.Model):
-    id = models.AutoField(primary_key=True)
-    id_prod = models.ManyToManyField(Producto, through='Ingreso')
-    cantidad = models.IntegerField()
-    precio_compra = models.IntegerField()
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-class Ingreso(models.Model):
-    id_adq = models.ForeignKey(Adquisicion, on_delete=models.CASCADE)
-    id_prod = models.ForeignKey(Producto, on_delete=models.CASCADE)
-    cantidad = models.IntegerField()
-    precio_compra = models.IntegerField()
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
 class Proveedor(models.Model):
     id = models.AutoField(primary_key=True)
     rut = models.CharField(max_length=13, unique=True)
@@ -30,10 +13,18 @@ class Proveedor(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-class Orden_adq(models.Model):
+class OrdenAdq(models.Model):
     id = models.AutoField(primary_key=True)
-    id_adq = models.ForeignKey(Adquisicion, on_delete=models.CASCADE)
     id_prov = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
+    productos = models.ManyToManyField(Producto, through="Ingreso")
+    precio_compra = models.IntegerField()
+    cantidad = models.IntegerField(default=0)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+class Ingreso(models.Model):
+    id_adq = models.ForeignKey(OrdenAdq, on_delete=models.CASCADE)
+    id_prod = models.ForeignKey(Producto, on_delete=models.CASCADE)
     precio_compra = models.IntegerField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
