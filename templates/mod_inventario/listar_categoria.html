@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+
+{% block page_name%} Inventario {% endblock %}
+{% block page_description %}Listar Categoria{% endblock %}
+
+
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Nombre</td>
+                <td>Descripción</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for categoria in object_list %}
+            <tr>
+                <td>{{ categoria.id }}</td>
+                <td>{{ categoria.nombre }}</td>
+                <td>{{ categoria.descripcion }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
