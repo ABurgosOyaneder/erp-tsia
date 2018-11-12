@@ -14,7 +14,7 @@ class CrearCategoria(CreateView):
     model = Categoria
     form_class = CategoriaForm
     template_name = 'mod_inventario/crear_categoria.html'
-    success_url = reverse_lazy('index_inventario')
+    success_url = reverse_lazy('listar_categoria')
 
 class ListarCategoria(ListView):
     model = Categoria
@@ -24,12 +24,12 @@ class EditarCategoria(UpdateView):
     model = Categoria
     form_class = CategoriaForm
     template_name = 'mod_inventario/crear_categoria.html'
-    success_url = reverse_lazy('index_inventario')
+    success_url = reverse_lazy('listar_categoria')
 
 class EliminarCategoria(DeleteView):
     model = Categoria
     template_name = 'mod_inventario/eliminar_categoria.html'
-    success_url = reverse_lazy('index_inventario')
+    success_url = reverse_lazy('listar_categoria')
 
 # Clase Producto
 
