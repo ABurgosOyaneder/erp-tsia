@@ -2,12 +2,13 @@ from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView , DeleteView
 from django.urls import reverse_lazy
 
-from apps.mod_contabilidad.models import Contabilidad, ActivoFijo
-from apps.mod_contabilidad.form import ContabilidadForm, ActivoFijoForm
+
+from apps.mod_contabilidad.models import  Contabilidad, ActivoFijo
+from apps.mod_contabilidad.form import ActivoFijoFrom, ActivoFijoForm
 # Create your views here.
 
 def index(request):
-    return render(request,'mod_contabilidad/index.html')
+    return render(request, 'mod_contabilidad/index.html')
 
 def contabilidad(request):
     return render(request, 'mod_contabilidad/contabilidad.html')

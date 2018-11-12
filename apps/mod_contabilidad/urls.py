@@ -1,10 +1,11 @@
 from django.urls import path
 from . import views
 
-from apps.mod_contabilidad.views import ActivoFijoList, ActivoFijoCreate, ActivoUpdate, ActivoDelete
+from apps.mod_contabilidad.views import ContabilidadList, ContabilidadCreate, ContabilidadUpdate, ContabilidadDelete
+from apps.mod_contabilidad.views import ActivoFijoList, ActivoFijoCreate, ActivoFijoUpdate, ActivoFijoDelete
 
 urlpatterns = [
-    path('contabilidad/', views.index, name="index_contabilidad"),
+    path('index/', views.index, name="index_contabilidad"),
 
     path('activo/', ActivoFijoList.as_view(), name="contabilidad_activos_fijos"),
     path('activo/create', ActivoFijoCreate.as_view(), name="contabilidad_activos_fijos_create"),
