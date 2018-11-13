@@ -43,13 +43,13 @@ class ListarProducto(ListView):
     model = Producto
     template_name = 'mod_inventario/listar_producto.html'
 
-class EditarProducto(UpdateView):
+'''class EditarProducto(UpdateView):
     model = Producto
     form_class = ProductoForm
     template_name = 'mod_inventario/crear_producto.html'
-    success_url = reverse_lazy('index_inventario')
+    success_url = reverse_lazy('index_inventario')'''
 
-class EliminarProducto(DeleteView):
+'''class EliminarProducto(DeleteView):
     model = Producto
     template_name = 'mod_inventario/eliminar_producto.html'
-    success_url = reverse_lazy('index_inventario')
+    success_url = reverse_lazy('index_inventario')'''

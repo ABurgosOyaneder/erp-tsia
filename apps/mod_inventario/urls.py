@@ -11,6 +11,6 @@ urlpatterns = [
     # Clase Producto
     path('inventario/crear_producto/', views.CrearProducto.as_view(), name="crear_producto"),
     path('inventario/listar_producto/', views.ListarProducto.as_view(), name="listar_producto"),
-    path('inventario/editar_producto/<int:pk>/', views.EditarProducto.as_view(), name="editar_producto"),
-    path('inventario/eliminar_producto/<int:pk>/', views.EliminarProducto.as_view(), name="eliminar_producto"),
+    #path('inventario/editar_producto/<int:pk>/', views.EditarProducto.as_view(), name="editar_producto"),
+    #path('inventario/eliminar_producto/<int:pk>/', views.EliminarProducto.as_view(), name="eliminar_producto"),
 ]

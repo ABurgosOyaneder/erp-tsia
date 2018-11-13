@@ -2,15 +2,25 @@
 
 
 {% block page_name%} Categoria {% endblock %}
-{% block page_description %}Crear categoria{% endblock %}
+{% block page_description %}
+    {% if object.nombre %}
+        <p>Editando la categoria: {{ object.nombre }}</p>
+    {% else %}
+        <p>Crear categoria</p>
+    {% endif %}
+{% endblock %}
 
 
 {% block content %}
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Crear categoria</button>
-        <br>
-        <a href="{% url 'listar_categoria' %}">Volver al listado de categorias</a>
+        {% if object.nombre %}
+            <button type="submit">Editar categoria</button>
+        {% else %}
+            <button type="submit">Crear categoria</button>
+        {% endif %}
+        <br><br>
+            <a href="{% url 'listar_categoria' %}">Volver al listado de categorias</a>
     </form>
 {% endblock %}
